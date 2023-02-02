@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="16313" started-at="2023-02-01T19:37:47Z" finished-at="2023-02-01T19:38:03Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="16313" started-at="2023-02-01T19:37:47Z" finished-at="2023-02-01T19:38:03Z">
+      <class name="qaautomation.december2022.apitest.APITestAfterRefactor">
+        <test-method status="PASS" signature="loginAPI()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="loginAPI" is-config="true" duration-ms="4137" started-at="2023-02-01T19:37:47Z" finished-at="2023-02-01T19:37:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAPI -->
+        <test-method status="PASS" signature="dashboardAPI()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="dashboardAPI" duration-ms="2486" started-at="2023-02-01T19:37:51Z" finished-at="2023-02-01T19:37:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardAPI -->
+        <test-method status="PASS" signature="loginAPI()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="loginAPI" is-config="true" duration-ms="1450" started-at="2023-02-01T19:37:53Z" finished-at="2023-02-01T19:37:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAPI -->
+        <test-method status="PASS" signature="dashboardAPIUsingSchemaInCode()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="dashboardAPIUsingSchemaInCode" duration-ms="1361" started-at="2023-02-01T19:37:55Z" finished-at="2023-02-01T19:37:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardAPIUsingSchemaInCode -->
+        <test-method status="PASS" signature="loginAPI()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="loginAPI" is-config="true" duration-ms="1320" started-at="2023-02-01T19:37:56Z" finished-at="2023-02-01T19:37:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAPI -->
+        <test-method status="PASS" signature="userAPI()[pri:0, instance:qaautomation.december2022.apitest.APITestAfterRefactor@2e61d218]" name="userAPI" duration-ms="1437" started-at="2023-02-01T19:37:58Z" finished-at="2023-02-01T19:37:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAPI -->
+      </class> <!-- qaautomation.december2022.apitest.APITestAfterRefactor -->
+      <class name="qaautomation.december2022.apitest.APITest">
+        <test-method status="PASS" signature="loginAPI()[pri:1, instance:qaautomation.december2022.apitest.APITest@6b98a075]" name="loginAPI" duration-ms="1438" started-at="2023-02-01T19:37:59Z" finished-at="2023-02-01T19:38:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAPI -->
+        <test-method status="PASS" signature="userAPI()[pri:2, instance:qaautomation.december2022.apitest.APITest@6b98a075]" name="userAPI" duration-ms="1192" started-at="2023-02-01T19:38:00Z" finished-at="2023-02-01T19:38:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAPI -->
+        <test-method status="PASS" signature="buildCardsAPI()[pri:3, instance:qaautomation.december2022.apitest.APITest@6b98a075]" name="buildCardsAPI" duration-ms="1245" started-at="2023-02-01T19:38:02Z" finished-at="2023-02-01T19:38:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buildCardsAPI -->
+      </class> <!-- qaautomation.december2022.apitest.APITest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

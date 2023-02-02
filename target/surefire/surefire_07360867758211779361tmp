@@ -1,0 +1,8 @@
+#surefire_0
+#Thu Feb 02 02:37:44 WIB 2023
+style.color=always
+user.dir=/Users/muhammadnur/Documents/Muhammad Nur/Bootcamp Fullstack Automation/december2022
+suiteXmlFile=testng.xml
+env=stage
+localRepository=/Users/muhammadnur/.m2/repository
+basedir=/Users/muhammadnur/Documents/Muhammad Nur/Bootcamp Fullstack Automation/december2022
