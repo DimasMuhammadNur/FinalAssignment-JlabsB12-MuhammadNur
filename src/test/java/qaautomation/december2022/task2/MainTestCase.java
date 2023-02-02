@@ -1,5 +1,7 @@
 package qaautomation.december2022.task2;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -44,7 +46,7 @@ public class MainTestCase extends BaseDriver{
 		//Verify Title Product
 		String actualText = driver.get().findElement(By.xpath("//div[@class='inventory_details_name large_size']")).getText();
 		String ExpectedText = ("Sauce Labs Bike Light");
-		Assert.assertTrue(actualText.contains(ExpectedText));
+		AssertJUnit.assertTrue(actualText.contains(ExpectedText));
 		Utility.hardWait(2);
 		//Add to cart and Click Cart
 		String actualPrice = driver.get().findElement(By.xpath("//div[@class='inventory_details_price']")).getText();
@@ -53,15 +55,15 @@ public class MainTestCase extends BaseDriver{
 		//Verify Item Name and Description equals
 		String actualTitleCartPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
 		String expectedTitleCartPage = ("Sauce Labs Bike Light");
-		Assert.assertTrue(actualTitleCartPage.contains(expectedTitleCartPage));
+		AssertJUnit.assertTrue(actualTitleCartPage.contains(expectedTitleCartPage));
 		String actualDescCartPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_desc']")).getText();
 		String expectedDescCartPage = ("A red light isn't the desired state in testing but it sure helps when riding your bike at night. "
 				+ "Water-resistant with 3 lighting modes, 1 AAA battery included.");
-		Assert.assertTrue(actualDescCartPage.contains(expectedDescCartPage));
+		AssertJUnit.assertTrue(actualDescCartPage.contains(expectedDescCartPage));
 		Utility.hardWait(2);
 		//Verify Price equals
 		String expectedEqualPrice = ("$9.99");
-		Assert.assertEquals(actualPrice, expectedEqualPrice);
+		AssertJUnit.assertEquals(actualPrice, expectedEqualPrice);
 		driver.get().findElement(By.id("checkout")).click();
 		Utility.hardWait(2);
 		//Set Information for Checkout
@@ -73,38 +75,38 @@ public class MainTestCase extends BaseDriver{
 		//Checkout Overview
 		String actualTitleOverviewPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
 		String expectedTitleOverviewPage = ("Sauce Labs Bike Light");
-		Assert.assertTrue(actualTitleOverviewPage.contains(expectedTitleOverviewPage));
+		AssertJUnit.assertTrue(actualTitleOverviewPage.contains(expectedTitleOverviewPage));
 		String actualDescOverviewPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_desc']")).getText();
 		String expectedDescOverviewPage = ("A red light isn't the desired state in testing but it sure helps when riding your bike at night. "
 				+ "Water-resistant with 3 lighting modes, 1 AAA battery included.");
-		Assert.assertTrue(actualDescOverviewPage.contains(expectedDescOverviewPage));
+		AssertJUnit.assertTrue(actualDescOverviewPage.contains(expectedDescOverviewPage));
 		String actualPaymentInfo = driver.get().findElement(By.xpath("//div[normalize-space()='SauceCard #31337']")).getText();
 		String expectedPaymentInfo = ("SauceCard #31337");
-		Assert.assertTrue(actualPaymentInfo.contains(expectedPaymentInfo));
+		AssertJUnit.assertTrue(actualPaymentInfo.contains(expectedPaymentInfo));
 		String actualShipmentInfo = driver.get().findElement(By.xpath("//div[normalize-space()='FREE PONY EXPRESS DELIVERY!']")).getText();
 		String expectedShipmentInfo = ("FREE PONY EXPRESS DELIVERY!");
-		Assert.assertTrue(actualShipmentInfo.contains(expectedShipmentInfo));
+		AssertJUnit.assertTrue(actualShipmentInfo.contains(expectedShipmentInfo));
 		driver.get().findElement(By.xpath("//div[@class='summary_tax_label']")).isDisplayed();
 		String actualTotalPayment = driver.get().findElement(By.xpath("//div[@class='summary_total_label']")).getText();
 		String expectedTotalPayment = ("Total: $10.79");
-		Assert.assertTrue(actualTotalPayment.contains(expectedTotalPayment));
+		AssertJUnit.assertTrue(actualTotalPayment.contains(expectedTotalPayment));
 		driver.get().findElement(By.id("finish")).click();
 		Utility.hardWait(2);
 		//Checkout Success Page
 		String actualSuccessTransactionPage= successPage.getTitlePage();
 		String expectedSuccessTransactionPage = ("CHECKOUT: COMPLETE!");
-		Assert.assertTrue(actualSuccessTransactionPage.contains(expectedSuccessTransactionPage));
+		AssertJUnit.assertTrue(actualSuccessTransactionPage.contains(expectedSuccessTransactionPage));
 		String actualTitleDesc= successPage.getTitleDesc();
 		String expectedTitleDesc = ("THANK YOU FOR YOUR ORDER");
 		System.out.println("Actual: "+ actualTitleDesc);
 		System.out.println("Expected: "+ expectedTitleDesc);
-		Assert.assertTrue(actualTitleDesc.contains(expectedTitleDesc));
+		AssertJUnit.assertTrue(actualTitleDesc.contains(expectedTitleDesc));
 		String actualSuccessDesc= successPage.getSuccessDesc();
 		String expectedSuccessDesc = ("Your order has been dispatched, and will arrive "
 				+ "just as fast as the pony can get there!");
 		System.out.println("Actual: "+ actualSuccessDesc);
 		System.out.println("Expected: "+ expectedSuccessDesc);
-		Assert.assertTrue(actualSuccessDesc.contains(expectedSuccessDesc));
+		AssertJUnit.assertTrue(actualSuccessDesc.contains(expectedSuccessDesc));
 		successPage.getSuccessImage();
 		successPage.backToHome();
 		Utility.hardWait(2);
@@ -129,16 +131,16 @@ public class MainTestCase extends BaseDriver{
 		//Verify Item Name and Description equals
 		String actualTitleCartPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
 		String expectedTitleCartPage = ("Sauce Labs Bike Light");
-		Assert.assertTrue(actualTitleCartPage.contains(expectedTitleCartPage));
+		AssertJUnit.assertTrue(actualTitleCartPage.contains(expectedTitleCartPage));
 		String actualDescCartPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_desc']")).getText();
 		String expectedDescCartPage = ("A red light isn't the desired state in testing but it sure helps when riding your bike at night. "
 				+ "Water-resistant with 3 lighting modes, 1 AAA battery included.");
-		Assert.assertTrue(actualDescCartPage.contains(expectedDescCartPage));
+		AssertJUnit.assertTrue(actualDescCartPage.contains(expectedDescCartPage));
 		Utility.hardWait(2);
 		//Verify Price equals
 		String actualPrice = driver.get().findElement(By.xpath("//div[@class='inventory_item_price']")).getText();
 		String expectedEqualPrice = ("$9.99");
-		Assert.assertEquals(actualPrice, expectedEqualPrice);
+		AssertJUnit.assertEquals(actualPrice, expectedEqualPrice);
 		driver.get().findElement(By.id("checkout")).click();
 		Utility.hardWait(2);
 		//Set Information for Checkout
@@ -150,38 +152,38 @@ public class MainTestCase extends BaseDriver{
 		//Checkout Overview
 		String actualTitleOverviewPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
 		String expectedTitleOverviewPage = ("Sauce Labs Bike Light");
-		Assert.assertTrue(actualTitleOverviewPage.contains(expectedTitleOverviewPage));
+		AssertJUnit.assertTrue(actualTitleOverviewPage.contains(expectedTitleOverviewPage));
 		String actualDescOverviewPage = driver.get().findElement(By.xpath("//div[@class='inventory_item_desc']")).getText();
 		String expectedDescOverviewPage = ("A red light isn't the desired state in testing but it sure helps when riding your bike at night. "
 				+ "Water-resistant with 3 lighting modes, 1 AAA battery included.");
-		Assert.assertTrue(actualDescOverviewPage.contains(expectedDescOverviewPage));
+		AssertJUnit.assertTrue(actualDescOverviewPage.contains(expectedDescOverviewPage));
 		String actualPaymentInfo = driver.get().findElement(By.xpath("//div[normalize-space()='SauceCard #31337']")).getText();
 		String expectedPaymentInfo = ("SauceCard #31337");
-		Assert.assertTrue(actualPaymentInfo.contains(expectedPaymentInfo));
+		AssertJUnit.assertTrue(actualPaymentInfo.contains(expectedPaymentInfo));
 		String actualShipmentInfo = driver.get().findElement(By.xpath("//div[normalize-space()='FREE PONY EXPRESS DELIVERY!']")).getText();
 		String expectedShipmentInfo = ("FREE PONY EXPRESS DELIVERY!");
-		Assert.assertTrue(actualShipmentInfo.contains(expectedShipmentInfo));
+		AssertJUnit.assertTrue(actualShipmentInfo.contains(expectedShipmentInfo));
 		driver.get().findElement(By.xpath("//div[@class='summary_tax_label']")).isDisplayed();
 		String actualTotalPayment = driver.get().findElement(By.xpath("//div[@class='summary_total_label']")).getText();
 		String expectedTotalPayment = ("Total: $10.79");
-		Assert.assertTrue(actualTotalPayment.contains(expectedTotalPayment));
+		AssertJUnit.assertTrue(actualTotalPayment.contains(expectedTotalPayment));
 		driver.get().findElement(By.id("finish")).click();
 		Utility.hardWait(2);
 		//Checkout Success Page
 		String actualSuccessTransactionPage= successPage.getTitlePage();
 		String expectedSuccessTransactionPage = ("CHECKOUT: COMPLETE!");
-		Assert.assertTrue(actualSuccessTransactionPage.contains(expectedSuccessTransactionPage));
+		AssertJUnit.assertTrue(actualSuccessTransactionPage.contains(expectedSuccessTransactionPage));
 		String actualTitleDesc= successPage.getTitleDesc();
 		String expectedTitleDesc = ("THANK YOU FOR YOUR ORDER");
 		System.out.println("Actual: "+ actualTitleDesc);
 		System.out.println("Expected: "+ expectedTitleDesc);
-		Assert.assertTrue(actualTitleDesc.contains(expectedTitleDesc));
+		AssertJUnit.assertTrue(actualTitleDesc.contains(expectedTitleDesc));
 		String actualSuccessDesc= successPage.getSuccessDesc();
 		String expectedSuccessDesc = ("Your order has been dispatched, and will arrive "
 				+ "just as fast as the pony can get there!");
 		System.out.println("Actual: "+ actualSuccessDesc);
 		System.out.println("Expected: "+ expectedSuccessDesc);
-		Assert.assertTrue(actualSuccessDesc.contains(expectedSuccessDesc));
+		AssertJUnit.assertTrue(actualSuccessDesc.contains(expectedSuccessDesc));
 		successPage.getSuccessImage();
 		successPage.backToHome();
 		Utility.hardWait(2);
