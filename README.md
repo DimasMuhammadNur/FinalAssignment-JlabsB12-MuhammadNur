@@ -12,4 +12,4 @@
 `src/test/java/qaautomation/december2022/task4APITestSignUp/MainAPITestTask4.java`
 * Tugas 5: Add file to repository using Git and add Mr. Andro as a collaborator
 
-##THANK YOU!!!
+THANK YOU!!!
