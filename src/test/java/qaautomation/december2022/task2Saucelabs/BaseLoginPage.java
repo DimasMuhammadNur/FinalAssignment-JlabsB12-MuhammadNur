@@ -1,4 +1,4 @@
-package qaautomation.december2022.task2;
+package qaautomation.december2022.task2Saucelabs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

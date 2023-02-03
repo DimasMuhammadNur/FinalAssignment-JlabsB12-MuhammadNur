@@ -1,4 +1,4 @@
-package qaautomation.december2022.task1;
+package qaautomation.december2022.task1Kalkulator;
 
 public class MainKalkulator extends MethodKalkulator {
 	public static void main(String[] args) throws Exception {

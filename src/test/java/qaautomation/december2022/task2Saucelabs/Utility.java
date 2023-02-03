@@ -1,4 +1,4 @@
-package qaautomation.december2022.task3;
+package qaautomation.december2022.task2Saucelabs;
 
 public class Utility {
 	public static void hardWait(int seconds) {

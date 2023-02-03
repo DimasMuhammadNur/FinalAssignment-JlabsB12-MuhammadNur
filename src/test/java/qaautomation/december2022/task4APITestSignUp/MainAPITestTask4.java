@@ -1,4 +1,4 @@
-package qaautomation.december2022.task4;
+package qaautomation.december2022.task4APITestSignUp;
 
 import java.util.Locale;
 

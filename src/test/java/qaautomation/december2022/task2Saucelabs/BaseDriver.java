@@ -1,4 +1,4 @@
-package qaautomation.december2022.task3;
+package qaautomation.december2022.task2Saucelabs;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseDriverTask3 {
+public class BaseDriver {
 	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>(); 
 	ThreadLocal<WebDriverWait> explicitWait = new ThreadLocal<WebDriverWait>();
 	
@@ -18,8 +18,8 @@ public class BaseDriverTask3 {
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver.set(new ChromeDriver());
-		explicitWait.set(new WebDriverWait(driver.get(), Duration.ofSeconds(5)));
-		driver.get().get("https://yopmail.com/");
+		explicitWait.set(new WebDriverWait(driver.get(), Duration.ofSeconds(3)));
+		driver.get().get("https://www.saucedemo.com/");
 	}
 	
 	@AfterMethod

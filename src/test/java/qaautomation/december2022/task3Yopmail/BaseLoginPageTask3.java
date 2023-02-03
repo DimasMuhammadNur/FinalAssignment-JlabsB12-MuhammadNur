@@ -1,4 +1,4 @@
-package qaautomation.december2022.task3;
+package qaautomation.december2022.task3Yopmail;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

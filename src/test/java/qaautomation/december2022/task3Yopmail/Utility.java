@@ -1,4 +1,4 @@
-package qaautomation.december2022.task2;
+package qaautomation.december2022.task3Yopmail;
 
 public class Utility {
 	public static void hardWait(int seconds) {

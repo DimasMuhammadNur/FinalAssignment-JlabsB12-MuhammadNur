@@ -1,4 +1,4 @@
-package qaautomation.december2022.task1;
+package qaautomation.december2022.task1Kalkulator;
 
 import java.util.Scanner;
 
