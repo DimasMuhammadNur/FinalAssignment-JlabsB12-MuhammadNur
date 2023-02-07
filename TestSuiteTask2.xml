@@ -3,7 +3,7 @@
 <suite thread-count="2" name="Suite">
   <test thread-count="2" name="Test">
     <classes>
-      <class name="qaautomation.december2022.task2.MainTestCase"/>
+      <class name="qaautomation.december2022.task2Saucelabs.MainTestCase"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
