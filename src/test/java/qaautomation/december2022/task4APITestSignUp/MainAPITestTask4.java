@@ -1,6 +1,6 @@
 package qaautomation.december2022.task4APITestSignUp;
 
-import java.util.Locale;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
@@ -9,15 +9,22 @@ import com.github.javafaker.Faker;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import qaautomation.december2022.utils.DataUtility;
 
-public class MainAPITestTask4{	
-	@Test(priority = 1)
+public class MainAPITestTask4 extends BaseAPITestTask4{	 
+	Faker fakerForAll = new Faker();
+	String username = fakerForAll.name().firstName();
+	String password = fakerForAll.internet().password();
+	String email = fakerForAll.bothify("?????##@gmail.com");
+	String phNumber = "+62-87824393567";
+
+	@Test
 	public void getFakerUsername() {
 		Faker fakerForAll = new Faker();
 		String username = fakerForAll.name().firstName();
 		String password = fakerForAll.internet().password();
 		String email = fakerForAll.bothify("?????##@gmail.com");
-		String phoneNumber = fakerForAll.phoneNumber().phoneNumber();
+		String phoneNumber = "+62-87824393567";
 		
 		System.out.println(username);
 		System.out.println(password);
@@ -25,37 +32,18 @@ public class MainAPITestTask4{
 		System.out.println(phoneNumber);
 	}
 
-	@Test(priority = 2)
+	@Test
 	public void signUp() {
-		Faker fakerForAll = new Faker(Locale.US);
-		String username = fakerForAll.name().firstName();
-		String password = fakerForAll.internet().password();
-		String email = fakerForAll.bothify("?????##@gmail.com");
-		String phNumber = fakerForAll.phoneNumber().phoneNumber();
-		phNumber = phNumber.replaceAll("-","");
-		
-		System.out.println(username);
-		System.out.println(password);
-		System.out.println(email);
-		System.out.println(phNumber);
-		
 		RestAssured.baseURI = "https://api-staging-builder.engineer.ai";
-		String payload = "{\"user\":{\"first_name\":\""+username+"\","
-				+ "\"last_name\":\"\","
-				+ "\"email\":\""+email+"\","
-				+ "\"password\":\""+password+"\","
-				+ "\"phone_number\":\"+62-"+phNumber+"\","
-				+ "\"user_type\":\"User\","
-				+ "\"currency_id\":2}}";
+		String payload = strPayload(username,email,password,phNumber);
 		Response responseUser = RestAssured.given()
 				.contentType("application/json")
 				.body(payload)
 				.when().post("/users");
-		
 		AssertJUnit.assertEquals(responseUser.statusCode(), 200);
 	}
 	
-	@Test(priority = 3)
+	@Test
 	public void signUpError() {
 		RestAssured.baseURI = "https://api-staging-builder.engineer.ai";
 		String payload = "{\"user\":{\"first_name\":\"Janna\","
@@ -69,8 +57,20 @@ public class MainAPITestTask4{
 				.contentType("application/json")
 				.body(payload)
 				.when().post("/users");
-		
 		AssertJUnit.assertEquals(responseUser.statusCode(), 422);
+	}
+	
+	@Test
+	public void dashboardAPI() {
+		RestAssured.baseURI = "https://api-staging-builder.engineer.ai";
+		//Response responseDashboard = given().spec(loginJsonSpec)
+		//		.when().get("/build_cards?status=completed");
+		Response responseDashboard = RestAssured.given()
+				.contentType("application/json")
+				.body(DataUtilityTask4.getDataFromExcel("requestbody", "signinBody"))
+				.when().post(DataUtilityTask4.getDataFromExcel("path", "signup"));
+		responseDashboard.then().assertThat().body(matchesJsonSchema(DataUtility.getDataFromExcel("schemas", "dashboardschema")));
+		//assertEquals(responseDashboard.statusCode(), 422);
 	}
 }
 
